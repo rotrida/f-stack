@@ -9,7 +9,7 @@ custom_target('igb_uio',
         input: ['igb_uio.c', 'Kbuild'],
         output: 'igb_uio.ko',
         command: ['make', '-C', kernel_build_dir,
-                'M=' + meson.current_build_dir(),
+                'M=' + meson.current_source_dir(),
                 'src=' + meson.current_source_dir(),
                 'EXTRA_CFLAGS=-I' + meson.current_source_dir() +
                         '/../../../lib/librte_eal/include',
